@@ -5,7 +5,7 @@ metadata:
   labels:
     app: api-service
 spec:
-  replicas: 3
+  replicas: 3 
   selector:
     matchLabels:
       app: api-service
@@ -34,11 +34,10 @@ kind: Service
 metadata:
   name: api-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: api-service
   ports:
     - port: 80
       targetPort: 80
       nodePort: 30007
-      name:  app-port
