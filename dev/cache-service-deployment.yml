@@ -21,8 +21,8 @@ spec:
               memory: "256Mi"
               cpu: "1"
           envFrom:
-            - secretRef:
-                name: cache-server-configmap
+            - configMapRef:
+                name: cache-service-configmap
           ports:
           - containerPort: 50052
 
