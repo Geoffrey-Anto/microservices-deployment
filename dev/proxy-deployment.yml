@@ -1,13 +1,15 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Enter deployment name
+  name: proxy
 spec:
-  replicas: Enter the number of replicas
+  selector:
+    matchLabels:
+      app: proxy
   template:
     metadata:
       labels:
-        editor: vscode
+        app: proxy
     spec:
       containers:
       - name: proxy
